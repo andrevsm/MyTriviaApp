@@ -14,17 +14,22 @@
  * limitations under the License.
  */
 
-package com.example.android.navigation
+package com.avsm.android.navigation
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.example.android.navigation.databinding.ActivityMainBinding
+import androidx.fragment.app.Fragment
+import com.avsm.android.navigation.databinding.FragmentGameOverBinding
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        @Suppress("UNUSED_VARIABLE")
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+class GameOverFragment : Fragment() {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+        val binding: FragmentGameOverBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_game_over, container, false)
+        return binding.root
     }
 }
